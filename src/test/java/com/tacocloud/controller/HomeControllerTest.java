@@ -1,6 +1,5 @@
-package com.tacocloud.tacocloud.controller;
+package com.tacocloud.controller;
 
-import com.tacocloud.tacocloud.configuration.WebConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

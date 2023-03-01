@@ -1,6 +1,6 @@
-package com.tacocloud.tacocloud.entity;
+package com.tacocloud.entity;
 
-import com.tacocloud.tacocloud.repository.IngredientRepository;
+import com.tacocloud.repository.IngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 

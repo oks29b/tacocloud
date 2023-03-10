@@ -20,6 +20,7 @@ public class TacoOrder implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Date placedAt;
 
     @NotBlank(message = "Delivery name is required")
@@ -37,7 +38,7 @@ public class TacoOrder implements Serializable {
     @NotBlank(message = "Zip code is required")
     private  String deliveryZip;
 
-    @CreditCardNumber(message = "Not a valid credit card number") //4561 2612 1234 5467
+    @CreditCardNumber(message = "Not a valid credit card number") //4561261212345467
     private  String ccNumber;
 
     @Pattern(regexp = "^(0[1-9]|1[0-2])([\\/])([2-9][0-9])$", message = "Must be formatted MM/YY")

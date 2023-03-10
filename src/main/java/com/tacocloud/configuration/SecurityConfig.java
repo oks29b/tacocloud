@@ -19,16 +19,6 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-//    @Bean
-//    public UserDetailsService userDetailsService(PasswordEncoder encoder){
-//        List<UserDetails> userDetails = new ArrayList<>();
-//        userDetails.add(new User("buzz", encoder.encode("password"),
-//                Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"))));
-//        userDetails.add(new User("woody", encoder.encode("password"),
-//                Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"))));
-//        return new InMemoryUserDetailsManager(userDetails);
-//    }
-
     @Bean
     public UserDetailsService userDetailsService(UserRepository userRepository){
     return username -> {
@@ -42,7 +32,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .authorizeRequests()
-                    .antMatchers("/design", "/orders").access("hasRole('USER')")
+                    .antMatchers("/design", "/orders/*").access("hasRole('USER')")
                     .antMatchers("/", "/**").access("permitAll()")
                 .and()
                     .formLogin()

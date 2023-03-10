@@ -6,7 +6,6 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "Ingredient")
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class Ingredient{
